@@ -5,3 +5,4 @@ venv
 *.log
 core/migrations
 .idea
+__pycache__

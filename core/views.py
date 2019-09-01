@@ -18,10 +18,12 @@ class ListEmployeeView(generics.ListAPIView):
     """
         Retrive all
     """
-    queryset = Employee.objects.all()
+    # queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    pagination_class = StandardResultsSetPagination
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    # pagination_class = StandardResultsSetPagination
+    def get_queryset(self):
+        return Employee.objects.all()
 
 class CreateEmployeeView(generics.CreateAPIView):
     """
@@ -54,7 +56,7 @@ class UpdateOneEmployeeView(generics.UpdateAPIView):
 
 class AllOperationsEmployeeView(generics.RetrieveUpdateDestroyAPIView):
     '''
-        All Operations
+        All Operations x
     '''
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
