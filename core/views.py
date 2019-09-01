@@ -25,6 +25,7 @@ class ListEmployeeView(generics.ListAPIView):
     def get_queryset(self):
         return Employee.objects.all()
 
+
 class CreateEmployeeView(generics.CreateAPIView):
     """
         To Create
@@ -40,6 +41,7 @@ class RetriveOneEmployeeView(generics.RetrieveAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
+
 class DeleteOneEmployeeView(generics.DestroyAPIView):
     '''
         To Delete One
@@ -47,12 +49,14 @@ class DeleteOneEmployeeView(generics.DestroyAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
+
 class UpdateOneEmployeeView(generics.UpdateAPIView):
     '''
         To Update One
     '''
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+
 
 class AllOperationsEmployeeView(generics.RetrieveUpdateDestroyAPIView):
     '''
